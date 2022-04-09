@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/guessRGB/static/css/main.6853eabe.css",
-    "main.js": "/guessRGB/static/js/main.84f73438.js",
+    "main.css": "/guessRGB/static/css/main.06406a7c.css",
+    "main.js": "/guessRGB/static/js/main.d614ccce.js",
     "static/js/787.b6775a74.chunk.js": "/guessRGB/static/js/787.b6775a74.chunk.js",
     "index.html": "/guessRGB/index.html",
-    "main.6853eabe.css.map": "/guessRGB/static/css/main.6853eabe.css.map",
-    "main.84f73438.js.map": "/guessRGB/static/js/main.84f73438.js.map",
+    "main.06406a7c.css.map": "/guessRGB/static/css/main.06406a7c.css.map",
+    "main.d614ccce.js.map": "/guessRGB/static/js/main.d614ccce.js.map",
     "787.b6775a74.chunk.js.map": "/guessRGB/static/js/787.b6775a74.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.6853eabe.css",
-    "static/js/main.84f73438.js"
+    "static/css/main.06406a7c.css",
+    "static/js/main.d614ccce.js"
   ]
 }
