@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/guessRGB/static/css/main.bed9d835.css",
-    "main.js": "/guessRGB/static/js/main.d9fcc70c.js",
+    "main.js": "/guessRGB/static/js/main.bc3b0740.js",
     "index.html": "/guessRGB/index.html",
     "main.bed9d835.css.map": "/guessRGB/static/css/main.bed9d835.css.map",
-    "main.d9fcc70c.js.map": "/guessRGB/static/js/main.d9fcc70c.js.map"
+    "main.bc3b0740.js.map": "/guessRGB/static/js/main.bc3b0740.js.map"
   },
   "entrypoints": [
     "static/css/main.bed9d835.css",
-    "static/js/main.d9fcc70c.js"
+    "static/js/main.bc3b0740.js"
   ]
 }
