@@ -1,6 +1,5 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import User from '@/models/user.model'
-import bcrypt from 'bcryptjs'
 import clientPromise from "@/lib/mongodb";
 
 interface ResponseData {
@@ -24,23 +23,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
         responseData = { error: 'Database Error (Email in use).' }
         return res.status(400).json(responseData as ResponseData)
     } else {
-        const hash = await bcrypt.hash(req.body.password, parseInt(process.env.SALT_ROUNDS as string));
-        const user = new User({
-            email: req.body.email.toLowerCase(),
-            password: hash
-        })
 
-        await users.insertOne(user)
-            .then(() => {
-                console.log(user)
-                responseData = { msg: 'Registration success.' }
-                res.json(responseData as ResponseData)
-            })
-            .catch((error: any) => {
-                console.log(error)
-                responseData = { error: 'Registration failure.' }
-                res.status(400).json(responseData as ResponseData)
-            })
     }
 
 }
