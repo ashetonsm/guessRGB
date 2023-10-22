@@ -5,12 +5,11 @@ import { ResetButton } from '@/components/resetButton';
 import { useContext, useEffect, useState } from 'react';
 import GameContext from '@/context/GameContext';
 import { Container } from 'react-bootstrap';
-import { useSession } from 'next-auth/react';
 import { SaveHistory } from '@/components/saveHistory';
 import { InfoToast } from '@/components/infoToast';
 
 export default function Home() {
-  const { data: session } = useSession();
+  const session = false;
   const {
     dispatch,
     gamePlaying,
