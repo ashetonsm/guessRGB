@@ -1,7 +1,6 @@
 import clientPromise from "@/lib/mongodb";
 import { NextApiRequest, NextApiResponse } from "next";
 import History from "@/models/history.model";
-import { getServerSession } from "next-auth";
 import { authOptions } from "@/pages/api/auth/[...nextauth]";
 
 interface ResponseData {
@@ -11,7 +10,7 @@ interface ResponseData {
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse<ResponseData>) {
 
-    const session = await getServerSession(req, res, authOptions)
+    const session = false;
     const client = await clientPromise;
     const games = client.db('test').collection('games');
 
@@ -29,7 +28,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
         const newHistory = JSON.parse(req.body)
 
         const entry = await games.findOne({
-            email: { $regex: `${session?.user?.email}`, $options: 'i' },
+            email: { $regex: `NOSESSION@test.com`, $options: 'i' },
         });
 
         // Found an existy History entry for this email
@@ -41,7 +40,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
             })
         } else {
             const entry = new History({
-                email: session!.user!.email!.toString(),
+                email: "NOSESSION@test.com",
                 history: [newHistory]
             });
             await games.insertOne(entry).then(() => {
