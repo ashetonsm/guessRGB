@@ -1,32 +1,29 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "downlevelIteration": true,
     "lib": [
       "dom",
       "dom.iterable",
       "esnext"
     ],
     "allowJs": true,
-    "baseUrl": "./",
     "paths": {
       "@/components/*": [
-        "components/*"
+        "./components/*"
       ],
       "@/context/*": [
-        "context/*"
+        "./context/*"
       ],
       "@/lib/*": [
-        "lib/*"
+        "./lib/*"
       ],
       "@/models/*": [
-        "models/*"
+        "./models/*"
       ],
       "@/pages/*": [
-        "pages/*"
+        "./pages/*"
       ],
       "@/styles/*": [
-        "styles/*"
+        "./styles/*"
       ]
     },
     "skipLibCheck": true,
@@ -35,13 +32,14 @@
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
-    "module": "esnext",
-    "moduleResolution": "node",
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "preserve",
-    "incremental": true
+    "jsx": "react-jsx",
+    "incremental": true,
+    "target": "ES2017"
   },
   "include": [
     "components",
