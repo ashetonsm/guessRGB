@@ -43,6 +43,5 @@ This application is currently in development. It can be played below, but the de
 - React + Typescript
 - Bootstrap 5 + React-Bootstrap
 - MongoDB + Mongoose
-- Bcryptjs
 - Node.js
 - Next.js + NextAuth
