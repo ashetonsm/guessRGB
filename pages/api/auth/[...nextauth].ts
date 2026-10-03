@@ -1,10 +1,8 @@
 import NextAuth from 'next-auth';
 import type { NextAuthOptions } from 'next-auth';
 import GitHubProvider from 'next-auth/providers/github';
-import { MongoDBAdapter } from '@next-auth/mongodb-adapter';
 import clientPromise from '@/lib/mongodb';
 import Credentials from 'next-auth/providers/credentials';
-import { compare } from 'bcryptjs';
 import User from '@/models/user.model';
 
 export const authOptions: NextAuthOptions = {
@@ -42,15 +40,15 @@ export const authOptions: NextAuthOptions = {
           throw new Error("Email is not registered");
         }
 
-        const passwordCorrect = await compare(
-          credentials!.password,
-          user.password
-        );
+        // const passwordCorrect = await compare(
+        //   credentials!.password,
+        //   user.password
+        // );
 
-        // Incorrect password
-        if (!passwordCorrect) {
-          throw new Error("Password is incorrect");
-        }
+        // // Incorrect password
+        // if (!passwordCorrect) {
+        //   throw new Error("Password is incorrect");
+        // }
 
         return new User({
           name: user.name ? user.name : null,
@@ -61,7 +59,7 @@ export const authOptions: NextAuthOptions = {
       },
     }),
   ],
-  adapter: MongoDBAdapter(clientPromise),
+  // adapter: MongoDBAdapter(clientPromise),
   session: { strategy: 'jwt' },
   debug: process.env.NODE_ENV === "development",
   secret: process.env.NEXTAUTH_SECRET

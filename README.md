@@ -8,7 +8,7 @@
 
 A casual browser game. Guess the color by selecting a value from the color input. The answer is randomly generated. The player has five chances to guess correctly.
 
-This application is currently in development. It's being completely rewritten. It can be played below, but the demo does not feature working login/registration!
+This application is currently in development. It can be played below, but the demo does not feature working login/registration!
 
 ## [Demo without functional login/registration](https://ashetonsm.github.io/guessRGB/)
 
@@ -43,6 +43,5 @@ This application is currently in development. It's being completely rewritten. I
 - React + Typescript
 - Bootstrap 5 + React-Bootstrap
 - MongoDB + Mongoose
-- Bcryptjs
 - Node.js
 - Next.js + NextAuth
