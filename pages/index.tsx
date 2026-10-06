@@ -10,7 +10,7 @@ import { SaveHistory } from '@/components/saveHistory';
 import { InfoToast } from '@/components/infoToast';
 
 export default function Home() {
-  const { data: session } = useSession();
+  // const { data: session } = useSession();
   const {
     dispatch,
     gamePlaying,
@@ -29,7 +29,7 @@ export default function Home() {
    */
   useEffect(() => {
     if (!gamePlaying &&
-      session &&
+      // session &&
       recordedResult !== true) {
       saveHistory()
       dispatch({ type: 'SET_RECORDED_RESULT', payload: true });
