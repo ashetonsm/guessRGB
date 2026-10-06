@@ -19,12 +19,12 @@ export const Menu = () => {
             <Container>
                 <Row>
                     <Col className="justify-content-start">
-                        <Button onClick={() => setShowMenu(true)}
+                        {/* <Button onClick={() => setShowMenu(true)}
                             style={{
                                 marginTop: '1em',
                                 cursor: 'pointer',
                                 position: 'sticky',
-                            }}>MENU</Button>
+                            }}>MENU</Button> */}
                     </Col>
                     <Col className='d-flex justify-content-center' style={{ marginTop: '1em', padding: 0 }}>
                         <h1 className="text-center" id="title" style={{ margin: '0' }} >guessRGB</h1>
@@ -76,7 +76,7 @@ export const Menu = () => {
 
 
             {/* Begin menu area */}
-            <Offcanvas
+            {/* <Offcanvas
                 show={showMenu}
                 onHide={() => setShowMenu(false)}
                 className="d-flex justify-content-center">
@@ -91,7 +91,7 @@ export const Menu = () => {
                     <hr />
                     <p>Built by <a href="https://github.com/ashetonsm">Asheton S. M.</a></p>
                 </Offcanvas.Body>
-            </Offcanvas>
+            </Offcanvas> */}
             {/* End menu area */}
         </>
     )
