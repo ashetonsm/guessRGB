@@ -85,7 +85,7 @@ export const getServerSideProps: GetServerSideProps = async ({ req }) => {
         };
     }
 
-    const getHistory = await fetch(`${process.env.NEXTAUTH_URL}/api/games`, {
+    const getHistory = await fetch(`${process.env.BASE_URL}/api/games`, {
         method: 'GET',
         headers: {
             cookie: req.headers.cookie || ""
