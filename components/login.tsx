@@ -1,4 +1,4 @@
-import { signIn, useSession } from "next-auth/react";
+// import { signIn, useSession } from "next-auth/react";
 import Router from "next/router";
 import { useState } from "react";
 import { Button, Form } from "react-bootstrap";
@@ -6,7 +6,7 @@ import LoadingDots from "@/components/icons/loading-dots";
 import { InfoToast } from "@/components/infoToast";
 
 export const Login = () => {
-    const { status } = useSession();
+    // const { status } = useSession();
     const [loading, setLoading] = useState(false);
     const [showInfoToast, setShowInfoToast] = useState(false);
     const [toastMsg, setToastMsg] = useState("...");
@@ -39,6 +39,7 @@ export const Login = () => {
      * @param e The event - needed for preventDefault
      * @returns setInfoToast(true)
      */
+    /*
     const handleSubmit = async (e: any) => {
         e.preventDefault();
         setValidated(true);
@@ -63,6 +64,7 @@ export const Login = () => {
         redirectToHome();
         return setShowInfoToast(true);
     }
+    */
 
     return (
         <>
@@ -110,7 +112,7 @@ export const Login = () => {
                         }}
                     />
                 </Form.Group>
-                <Button className="mb-3" type="submit" onClick={handleSubmit}>Log in</Button>
+                {/* <Button className="mb-3" type="submit" onClick={handleSubmit}>Log in</Button> */}
             </Form>
             
             <hr/>
@@ -121,7 +123,7 @@ export const Login = () => {
                         disabled={loading}
                         onClick={() => {
                             setLoading(true);
-                            signIn('github', { callbackUrl: `/` });
+                            // signIn('github', { callbackUrl: `/` });
                         }}
                         className={`${loading
                             ? 'bg-gray-200 border-gray-300'

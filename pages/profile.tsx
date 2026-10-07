@@ -1,14 +1,14 @@
 import { GuessDisplayH } from "@/components/guessDisplayH";
 import GameContext from "@/context/GameContext";
 import Paginate from "@/lib/paginate";
-import { GetServerSideProps } from "next";
-import { getSession, useSession } from "next-auth/react";
+// import { GetServerSideProps } from "next";
+// import { getSession, useSession } from "next-auth/react";
 import { useContext, useEffect, useState } from "react";
 import { Container, Button } from "react-bootstrap";
 
 const Profile = ({ history }: { history?: any }) => {
 
-    const { data: session } = useSession();
+    // const { data: session } = useSession();
     const [pageNumber, setPageNumber] = useState(1)
     const { dispatch, darkMode } = useContext(GameContext);
 
@@ -36,7 +36,7 @@ const Profile = ({ history }: { history?: any }) => {
     return (
         <Container>
             <div className="text-center d-flex flex-wrap justify-content-center">
-                <h3>Hello {session?.user?.email}! This is your game history:</h3>
+                <h3>Hello! This is your game history:</h3>
             </div>
 
             {history ?
@@ -74,36 +74,36 @@ const Profile = ({ history }: { history?: any }) => {
     )
 }
 
-export const getServerSideProps: GetServerSideProps = async ({ req }) => {
-    const session = await getSession({ req });
-    if (!session) {
-        return {
-            redirect: {
-                permanent: false,
-                destination: '/'
-            }
-        };
-    }
+// export const getServerSideProps: GetServerSideProps = async ({ req }) => {
+//     const session = await getSession({ req });
+//     if (!session) {
+//         return {
+//             redirect: {
+//                 permanent: false,
+//                 destination: '/'
+//             }
+//         };
+//     }
 
-    const getHistory = await fetch(`${process.env.BASE_URL}/api/games`, {
-        method: 'GET',
-        headers: {
-            cookie: req.headers.cookie || ""
-        }
-    })
+//     const getHistory = await fetch(`${process.env.BASE_URL}/api/games`, {
+//         method: 'GET',
+//         headers: {
+//             cookie: req.headers.cookie || ""
+//         }
+//     })
 
-    const historyObj = await getHistory.json()
-    var history = null
-    if (historyObj.history) {
-        history = historyObj.history.reverse()
-    }
+//     const historyObj = await getHistory.json()
+//     var history = null
+//     if (historyObj.history) {
+//         history = historyObj.history.reverse()
+//     }
 
-    return {
-        props: {
-            history,
-            session
-        }
-    };
-};
+//     return {
+//         props: {
+//             history,
+//             session
+//         }
+//     };
+// };
 
 export default Profile;

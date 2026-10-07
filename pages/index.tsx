@@ -31,7 +31,7 @@ export default function Home() {
     if (!gamePlaying &&
       // session &&
       recordedResult !== true) {
-      saveHistory()
+      // saveHistory()
       dispatch({ type: 'SET_RECORDED_RESULT', payload: true });
       setShowInfoToast(true)
     }
@@ -78,7 +78,7 @@ export default function Home() {
 
   return (
     <Container>
-      <InfoToast msg={toastMsg} show={showInfoToast ? "true" : "false"} onHide={() => setShowInfoToast(false)} />
+      {/* <InfoToast msg={toastMsg} show={showInfoToast ? "true" : "false"} onHide={() => setShowInfoToast(false)} /> */}
       <h5 className='text-center'>{gamePlaying ? "Choose a color:" : gameWon ? "You win!" : "You lose!"}</h5>
       <AnswerToast />
       <EnterGuess />

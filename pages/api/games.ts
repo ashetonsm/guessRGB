@@ -1,6 +1,6 @@
 import clientPromise from "@/lib/mongodb";
 import { NextApiRequest, NextApiResponse } from "next";
-import { getServerSession } from "next-auth";
+// import { getServerSession } from "next-auth";
 import { authOptions } from "@/pages/api/auth/[...nextauth]";
 
 interface ResponseData {
@@ -11,7 +11,8 @@ interface ResponseData {
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse<ResponseData>) {
 
-    const session = await getServerSession(req, res, authOptions)
+    const session = null
+    // const session = await getServerSession(req, res, authOptions)
     const client = await clientPromise;
     const games = client.db('test').collection('games');
 
@@ -26,7 +27,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
         }
 
         await games.findOne({
-            email: session!.user!.email!.toString()
+            email: "session!.user!.email!.toString()"
         })
             .then((result) => {
                 if (result !== null) {
